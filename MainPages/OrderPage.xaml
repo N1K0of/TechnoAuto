@@ -1,0 +1,42 @@
+﻿<Page x:Class="TechnoAuto2.MainPages.OrderPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:TechnoAuto2.MainPages"
+      mc:Ignorable="d" 
+       d:DesignHeight="900" d:DesignWidth="1416"
+      Title="OrderPage">
+
+    <Grid>
+        <DataGrid Height="900" VerticalAlignment="Bottom" x:Name="DgOrder" AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Создание" Width="170" Binding="{Binding created_at}"/>
+                <DataGridTextColumn Header="Тема" Width="170" Binding="{Binding title}"/>
+                <DataGridTextColumn Header="Сотрудник" Width="170" Binding="{Binding employee_id}"/>
+                <DataGridTextColumn Header="Статус" Width="150" Binding="{Binding TicketStatuses.name}"/>
+                <DataGridTextColumn Header="Приоритет" Width="170" Binding="{Binding Priorities.name}"/>
+                <DataGridTemplateColumn Header="Комменатрии" Width="200" >
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button x:Name="commenent" Content="Коммент."
+                                    Click="commenent_Click"
+                                    Background="#80AF8D" Foreground="White"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="Завершить" Width="250" x:Name="complete">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button x:Name="finish" Content="✔" Margin="5,0" 
+                                        Click="finish_Click"
+                                        ToolTip="Подтвердить завершение"
+                                        Background="#80AF8D" Foreground="White"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+
+</Page>

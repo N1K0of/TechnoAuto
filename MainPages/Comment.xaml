@@ -1,0 +1,17 @@
+﻿<Page x:Class="TechnoAuto2.MainPages.Comment"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:TechnoAuto2.MainPages"
+      mc:Ignorable="d" 
+      d:DesignHeight="900" d:DesignWidth="1416"
+      Title="Comment">
+
+    <Grid>
+        <ListBox x:Name="MessagesListBox" Width="1000" Height="700"/>
+        <TextBox x:Name="MessageTextBox" Height="50" Margin="0,800,0,0" Width="500" FontSize="28"/>
+        <Button Content="Отправить" Width="120" Height="50" Margin="700,800,0,0"
+                FontSize="20"/>
+    </Grid>
+</Page>

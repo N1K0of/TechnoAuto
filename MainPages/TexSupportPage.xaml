@@ -1,0 +1,63 @@
+﻿<Page x:Class="TechnoAuto2.MainPages.TexSupportPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:TechnoAuto2.MainPages"
+      mc:Ignorable="d" 
+      d:DesignHeight="900" d:DesignWidth="1416"
+      Title="TexSupportPage">
+
+    <Grid>
+        <Border Background="White" Height="130" VerticalAlignment="Top"/>
+        <Image Source="/Resource/Photo/Rectangle 1.png" Height="432" Width="285" Margin="0,0,900,0"/>
+        <Image Source="/Resource/Photo/Rectangle 2.png" Height="432" Width="566"/>
+
+        <StackPanel Height="432" Width="566">
+            <TextBox x:Name="EnterThemse" Height="60" Width="500" Margin="0,30,0,0"
+                     FontSize="30"/>
+            <TextBox x:Name="EnterProblems" Height="60" Width="500" Margin="0,10,0,0"
+                      FontSize="30"/>
+            <ComboBox x:Name="ChoseCategory" Height="60" Width="500" Margin="0,40,0,0"
+                       FontSize="30"/>
+            <ComboBox x:Name="ChosePriority" Height="60" Width="500" Margin="0,10,0,0"
+                       FontSize="30"/>
+        </StackPanel>
+
+        <StackPanel Height="415" Width="280" HorizontalAlignment="Left" Margin="120,0,0,0">
+            <TextBlock Text="Тема запроса" Foreground="White" FontSize="25" 
+                       HorizontalAlignment="Center"
+                       Margin="0,30,0,0"/>
+
+            <TextBlock Text="Описание проблемы" Foreground="White" FontSize="25" 
+                       HorizontalAlignment="Center"
+                       Margin="0,40,0,0"/>
+
+            <TextBlock Text="Категория" Foreground="White" FontSize="25" 
+                       HorizontalAlignment="Center"
+                       Margin="0,70,0,0"/>
+
+            <TextBlock Text="Приоритет" Foreground="White" FontSize="25" 
+                       HorizontalAlignment="Center"
+                       Margin="0,40,0,0"/>
+        </StackPanel>
+
+        <StackPanel Orientation="Horizontal" Height="50" Width="500" Margin="0,330,0,0">
+            <Button x:Name="Cancel" Content="ОТМЕНИТЬ" Width="200" 
+                    Foreground="Black" BorderBrush="White" Height="40" Click="Cancel_Click"
+                    Background="#F68787"/>
+
+            <Button x:Name="AddNewProblem" Margin="100,0,0,0"
+                    Width="200" Height="40" Content="СОХРАНИТЬ" Background="#80AF8D"
+                    BorderBrush="White" Click="AddNewProblem_Click"/>
+        </StackPanel>
+
+        <StackPanel Height="130" VerticalAlignment="Top">
+            <TextBlock Text="Новый запрос" HorizontalAlignment="Left" FontSize="30" Margin="20,20,0,0"/>
+            <TextBlock Text="Мы здесь, чтобы помочь вам с любыми вопросами и проблемами" 
+                       HorizontalAlignment="Left" FontSize="17" Margin="20,0,0,0"
+                       Foreground="#5A5A5A"/>
+        </StackPanel>
+
+    </Grid>
+</Page>

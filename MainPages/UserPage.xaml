@@ -1,0 +1,73 @@
+﻿<Page x:Class="TechnoAuto2.MainPages.UserPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:TechnoAuto2.MainPages"
+      mc:Ignorable="d" 
+     d:DesignHeight="900" d:DesignWidth="1300"
+      Title="UserPage">
+
+    <Grid>
+        <DataGrid Height="750" VerticalAlignment="Bottom" x:Name="DgUser" AutoGenerateColumns="False" IsReadOnly="False"
+                  CanUserAddRows="False"
+                  CanUserDeleteRows="False" FontSize="24">
+            <DataGrid.Columns >
+                <DataGridTextColumn Header="Фамилия" Width="*"
+                        Binding="{Binding first_name}" FontSize="14"/>
+                <DataGridTextColumn Header="Имя" Width="*"
+                        Binding="{Binding last_name}"/>
+                <DataGridTextColumn Header="Отчество" Width="*"
+                        Binding="{Binding MiddleName}"/>
+                <DataGridTextColumn Header="E-mail" Width="*"
+                        Binding="{Binding email}"/>
+                <DataGridTextColumn Header="Телефон" Width="*"
+                        Binding="{Binding phone}"/>
+                <DataGridTextColumn Header="Логин" Width="*"
+                        Binding="{Binding login}"/>
+                <DataGridTemplateColumn Width="170" Header="Действие"  x:Name="use">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button x:Name="delete" Content="Удалить" 
+                                    Background="#80AF8D" Foreground="White"
+                                    Click="delete_Click"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <!-- TextBox для ввода поиска -->
+        <TextBox x:Name="SearchTextBox" 
+             Width="449" Height="60"
+             VerticalAlignment="Top" 
+             HorizontalAlignment="Left"
+             Margin="151,50,0,0"
+             FontSize="37"
+            KeyUp="Search_KeyUp"
+            Background="White"/>
+
+        <!-- Водяной знак "Поиск" -->
+        <TextBlock x:Name="WatermarkTextBlock" 
+               Text="Поиск"
+               VerticalAlignment="Top"
+               HorizontalAlignment="Left"
+               Margin="41,55,0,0"
+               FontSize="37"
+               Foreground="Black"
+               IsHitTestVisible="False"/>
+
+        <Button x:Name="AddNewUser"
+                Height="60" Width="300"
+                Content="ДОБАВИТЬ" FontSize="25"
+                VerticalAlignment="Top" HorizontalAlignment="Right"
+                Margin="50" Background="#80AF8D" Foreground="White"
+                Click="AddNewUser_Click"/>
+
+        <Button Content="СОХРАНИТЬ" Click="Button_Click"  Height="60" Width="300"
+                FontSize="25" Background="#80AF8D" Foreground="White"
+                 VerticalAlignment="Top" HorizontalAlignment="Right"  Margin="0,50,360,0"
+                x:Name="Button"/>
+    </Grid>
+
+</Page>
